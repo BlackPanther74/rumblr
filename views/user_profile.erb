@@ -1,0 +1,31 @@
+<h2>User Profile</h2>
+
+<%# <%= current_user.username %>
+<%# <%= current_user.password %>
+
+<div class="container">
+
+  <fieldset>
+    <legend>Profile Information</legend>
+
+      First Name: <%= current_user.profile.first_name %> <br>
+      Last Name:  <%= current_user.profile.last_name %> <br>
+      Birthday:   <%= current_user.profile.birthday.strftime("%m/%d/%Y") %> <br>
+      Email:      <%= current_user.profile.email %> <br>
+      Telephone:  <%= current_user.profile.phone %> <br>
+      Email:      <%= current_user.profile.email %>
+
+    </fieldset>
+
+      <a href="posts/new">Create New Post</a> <br><br>
+
+      <form action="/delete" method="post">
+        <input type="submit" value="Delete Account">
+      </form>
+
+
+</div>
+
+<br>
+<br>
+<br>
