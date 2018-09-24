@@ -1,5 +1,5 @@
 <% users.each do |user| %>
   <%= user.profile.first_name %> <%= user.profile.last_name %><br>
   <%= user.password %><br>
-  <%= user.profile.birthday %>
+  <%= user.profile.birthday.strftime("%m/%d/%Y") %>
 <% end %>
