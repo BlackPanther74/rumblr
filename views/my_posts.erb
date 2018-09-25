@@ -1,9 +1,7 @@
 <h1>My Posts</h1>
 
-<% my_posts = User.find_by(id: session[:user_id])%>
-
-<%# <% my_posts = User.find_by(user_id: current_user.id)%> 
-<% personalposts = my_posts.posts%>
+<%# filters the posts based on the current user and then writes them to the screen %>
+<% personalposts = current_user.posts %>
 <% personalposts.reverse %>
 
 <% personalposts.each do |post| %>

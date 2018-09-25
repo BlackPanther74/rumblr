@@ -16,12 +16,14 @@ use Rack::MethodOverride
 #   set :database, ENV["DATABASE_URL"]
 # end
 
+# sets current user to current session
 def current_user
   if session[:user_id]
     return User.find(session[:user_id])
   end
 end
 
+# establishes index page route
 get '/' do
   if session[:user_id]
     erb :user_profile, locals: { current_user: current_user }
@@ -30,10 +32,12 @@ get '/' do
   end
 end
 
+# establishes signup page route
 get '/signup' do
   erb :signup
 end
 
+# establishes sign up page post route
 post '/signup' do
   # creates new user
   user = User.create(
@@ -48,10 +52,12 @@ post '/signup' do
   redirect '/complete-profile'
 end
 
+# establishes complete profile route
 get '/complete-profile' do
   erb :complete_profile
 end
 
+# establishes complete profile post route and create user in database
 post '/complete-profile' do
   Profile.create(
     first_name: params[:first_name],
@@ -66,53 +72,42 @@ post '/complete-profile' do
   redirect '/user-profile'
 end
 
+# establishes sign in route
 get '/signin' do
   erb :signin
 end
 
+# establishes sign in post route and checks if info matches database record
 post '/signin' do
   user = User.find_by(username: params[:username])
 
   if user && user.password == params[:password]
     session[:user_id] = user.id
-    # flash[:info] = 'You have been signed in'
 
     redirect '/user-profile'
   else
-    # flash[:error] = 'There was a problem with your signin, sucka!'
     redirect '/signin'
   end
 end
 
+# establishes user profile route
 get '/user-profile' do
   erb :user_profile
-  # erb :posts
 end
 
-# post '/signin' do
-#   user = User.find_by(username: params[:username])
-
-#   if user && user.password == params[:password]
-#     session[:user_id] = user.id
-#     flash[:info] = 'You have been signed in'
-
-#     redirect '/users'
-#   else
-#     flash[:error] = 'There was a problem with your signin, sucka!'
-#     redirect '/signup'
-#   end
-# end
-
+# establishes sign out route
 get '/signout' do
   session[:user_id] = nil
 
   redirect '/'
 end
 
+# establishes new post route
 get '/posts/new' do
   erb :new_post
 end
 
+# establishes posts route
 get '/posts' do
   output = ''
   # output += erb :new_post
@@ -120,6 +115,7 @@ get '/posts' do
   output
 end
 
+# establishes posts post route and adds new post to database
 post '/posts' do
   Post.create(
     title: params[:title],
@@ -130,10 +126,7 @@ post '/posts' do
   redirect '/posts'
 end
 
-# get '/content' do
-#   erb :content, locals: { users: User.all }
-# end
-
+# establishes user delete route and removes user's record, profile and posts from the database
 post '/delete' do
   # current_user
   current_user.destroy
@@ -142,14 +135,12 @@ post '/delete' do
   redirect '/'
 end
 
+# establishes all users route
 get '/users' do
   erb :users, locals: { users: User.all }
 end
 
+# establishes current users posts route
 get '/my-posts' do
-  # if current.user.post.nil?
-  #   redirect '/posts/new'
-  # else
     erb :my_posts
-  # end
 end

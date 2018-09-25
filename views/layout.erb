@@ -40,42 +40,29 @@
             <a href="/">Home</a>
           </li>
             <% if session[:user_id] %>
-            <li>
-              <a href="/my-posts">My Posts</a>
-            </li>
-            <li>
-              <a href="/posts">Feed</a>
-            </li>
-            <li>
-              <a href="/users">All Users</a>
-            </li>
-            <li>
-              <a href="/signout">Logout</a>
-                <%# dont do this shit %>
-              <%# <%= current_user.username  is logged in</li> %>
-              <% else %>
-            <li>
-              <a href="/signup">Sign Up</a></li>
-              <li><a href="/signin">Sign In</a>
-              <% end %>
+          <li>
+            <a href="/my-posts">My Posts</a>
+          </li>
+          <li>
+            <a href="/posts">Timeline</a>
+          </li>
+          <li>
+            <a href="/users">All Users</a>
+          </li>
+          <li>
+            <a href="/signout">Logout</a>
+            <% else %>
+          <li>
+            <a href="/signup">Sign Up</a></li>
+          <li>
+            <a href="/signin">Sign In</a>
+            <% end %>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 
-
-  <%# <% if flash[:info] %>
-    <%# <div id="flash-info"> %>
-      <%# <%= flash[:info] %>
-    <%# </div> %>
-  <%# <% end %>
-
-  <%# <% if flash[:error] %>
-    <%# <div id="flash-error"> %>
-      <%# <%= flash[:error] %>
-    <%# </div> %>
-  <%# <% end%>
 
   <%= yield %>
 

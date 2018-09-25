@@ -1,5 +1,12 @@
+<%# loops through all users and writes to page %>
+
+<br>
 <% users.each do |user| %>
-  <%= user.profile.first_name %> <%= user.profile.last_name %><br>
-  <%= user.password %><br>
-  <%= user.profile.birthday.strftime("%m/%d/%Y") %>
+  <div>
+  First Name: <%= user.profile.first_name %> <br>
+  Last Name: <%= user.profile.last_name %><br>
+  Birthday: <%= user.profile.birthday.strftime("%m/%d/%Y") %> 
+  </div>
+  <br>
+
 <% end %>
