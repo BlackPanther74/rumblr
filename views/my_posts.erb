@@ -1,10 +1,10 @@
 <h1>My Posts</h1>
 
 <%# filters the posts based on the current user and then writes them to the screen %>
-<% personalposts = current_user.posts %>
-<% personalposts.reverse %>
+<%# <% personalposts = current_user.posts %>
+<%# <% personalposts.reverse %> 
 
-<% personalposts.each do |post| %>
+<% current_user.posts.reverse.each do |post| %>
 
  <div class="row">
     <div class="col s12 m6">
