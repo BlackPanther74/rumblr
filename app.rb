@@ -137,7 +137,8 @@ end
 
 # establishes all users route
 get '/users' do
-  erb :users, locals: { users: User.all }
+  @users = User.all
+  erb :users
 end
 
 # establishes current users posts route

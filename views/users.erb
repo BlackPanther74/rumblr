@@ -1,7 +1,7 @@
 <%# loops through all users and writes to page %>
 
 <br>
-<% users.each do |user| %>
+<% @users.each do |user| %>
   <div>
   First Name: <%= user.profile.first_name %> <br>
   Last Name: <%= user.profile.last_name %><br>
