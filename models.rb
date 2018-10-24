@@ -2,7 +2,7 @@ require 'sinatra/activerecord'
 require 'pg'
 
 configure :development do
-set :database, 'postgresql:rumblr'
+  set :database, 'postgresql:rumblr'
 end
 
 configure :production do

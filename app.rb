@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'models'
+require 'sinatra/activerecord'
 
 set :sessions, true
 use Rack::MethodOverride
