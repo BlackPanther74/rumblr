@@ -1,7 +1,7 @@
 body, html {
   height: 100%;
-  background-color: #EBEBD3;
-  color: #B29A45 !important;
+  background-color: rgb(190, 194, 140) !important;
+  color: rgb(90, 90, 52) !important;
 }
 
 
@@ -29,4 +29,8 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+.navbar {
+  background-color: rgb(106, 190, 106) !important;
 }

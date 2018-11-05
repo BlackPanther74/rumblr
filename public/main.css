@@ -1,7 +1,7 @@
 body, html {
   height: 100%;
-  background-color: #EBEBD3;
-  color: #B29A45 !important; }
+  background-color: #bec28c !important;
+  color: #5a5a34 !important; }
 
 /* The hero image */
 .hero-image {
@@ -23,5 +23,8 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white; }
+
+.navbar {
+  background-color: #6abe6a !important; }
 
 /*# sourceMappingURL=main.css.map */

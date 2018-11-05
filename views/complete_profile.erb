@@ -3,45 +3,49 @@ then directs them to their homepage %>
 
 <h1>Profile</h1>
 
-<div class="container">
+    <div class="container">
 
-  <h2>Complete Profile</h2>
+      <h2>Complete Profile</h2>
 
-  <fieldset>
-    <legend>Contact information</legend>
+      <fieldset>
+        <legend>Contact information</legend>
 
-  <form action="/complete-profile" method="post">
-    <label for="First Name">First Name:</label>
-    <input type="text" name="first_name" placeholder="Enter first name"><br>
-    <label for="Last Name">Last Name:</label>
-    <input type="text" name="last_name" placeholder="Enter last name"><br>
-    <%# <label for="gender">Gender:</label>
-    <input type="text" name="gender" placeholder="Enter gender"><br> %>
-    <label for="date">Date:</label>
-    <input type="date" name="birthday" placeholder="Enter birthday"><br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" placeholder="Enter email"><br>
-    <label for="phone">Phone:</label>
-    <input type="tel" name="phone" placeholder="Enter phone"
-           placeholder="123-456-7890"
-           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-           required /><br>
-    <input type="submit" value="Submit">
-  </form>
-</fieldset>
+      <form action="/complete-profile" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="First Name">First Name:</label>
+            <input class="form-control" type="text" name="first_name" placeholder="Enter first name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Last Name">Last Name:</label>
+            <input class="form-control" type="text" name="last_name" placeholder="Enter last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="date">Birthday:</label>
+            <input class="form-control" type="date" name="birthday" placeholder="Enter birthday">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="phone">Phone:</label>
+            <input class="form-control" type="tel" name="phone" placeholder="Enter phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+          </div>
+        </div>
+        <button class="btn btn-outline-secondary" type="submit" value="Submit">Submit</button>
+      </form>
+    </fieldset>
 
-  
+      
 
-    <%# <label for="phone">Phone:</label>
-    <input type="tel" id="phone" name="phone"
-           placeholder="123-456-7890"
-           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-           required />
-    <span class="validity"></span> %>
+        <!-- <%# <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"
+              placeholder="123-456-7890"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required />
+        <span class="validity"></span> %>  -->
 
-
-  <br>
-  <br>
-  <br>
-
-</div>
+    </div>

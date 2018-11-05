@@ -1,11 +1,17 @@
 <%# this form allows users to create new posts %>
 <div class="container">
 
-<form action="/posts" method="post">
-  <input type="text" name="title" id="">
-  <textarea name="content" id="" cols="30" rows="10"></textarea>
-  <input type="submit" value="Create post">
-</form>
+  <form action="/posts" method="post">
+    <div class="form-group">
+      <label for="title">Title:</label>  
+      <input class="form-control" type="text" name="title" id="">
+    </div>
+    <div class="form-group">
+      <label for="title">Comment:</label>  
+      <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
+    </div>
+      <input class="btn btn-outline-secondary" type="submit" value="Create Post">
+  </form>
 
 <br>
 <br>

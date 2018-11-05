@@ -1,28 +1,30 @@
 <h2>User Profile</h2>
 
 <%# displays the user's info to the page %>
-<div class="container">
+    <div class="container">
 
-  <fieldset>
-    <legend>Profile Information</legend>
+      <fieldset>
+        <legend>Profile Information</legend>
 
-      First Name: <%= current_user.profile.first_name %> <br>
-      Last Name:  <%= current_user.profile.last_name %> <br>
-      Birthday:   <%= current_user.profile.birthday.strftime("%m/%d/%Y") %> <br>
-      Email:      <%= current_user.profile.email %> <br>
-      Telephone:  <%= current_user.profile.phone %> <br>
-      Email:      <%= current_user.profile.email %>
+          First Name: <%= current_user.profile.first_name %> <br>
+          Last Name:  <%= current_user.profile.last_name %> <br>
+          Birthday:   <%= current_user.profile.birthday.strftime("%m/%d/%Y") %> <br>
+          Email:      <%= current_user.profile.email %> <br>
+          Telephone:  <%= current_user.profile.phone %> <br>
+          Email:      <%= current_user.profile.email %>
 
-    </fieldset>
+        </fieldset>
 
-      <a href="posts/new">Create New Post</a> <br><br>
+        <br>
 
-      <form action="/delete" method="post">
-        <input type="submit" value="Delete Account">
-      </form>
-
-
-</div>
+          <!-- <button class="btn btn-sm btn-secondary"> -->
+          <a href="posts/new">Create New Post</a>
+          <!-- </button> -->
+          <br><br>
+          <form action="/delete" method="post">
+            <input type="submit" value="Delete Account" class="btn btn-sm btn-danger">
+          </form>
+    </div>
 
 <br>
 <br>
