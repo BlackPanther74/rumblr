@@ -7,11 +7,11 @@
 <% current_user.posts.reverse.each do |post| %>
 
 <div class="container">
-  <div class="card">
+  <div class="card border-success">
       <!-- <div class="card-header">
         Featured
       </div> -->
-    <div class="card-body">
+    <div class="card-body text-success">
       <h5 class="card-title"><%= post.title %></h5>
       <p class="card-text"><%= post.content %></p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
